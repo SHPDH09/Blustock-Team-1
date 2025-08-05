@@ -80,9 +80,7 @@ duplicates = check_duplicates(data)
 print("Missing Values:\n", missing)
 print("Duplicate Records:", duplicates)
 📊 Generate Data Quality Report (PDF)
-python
-Copy
-Edit
+
 from fpdf import FPDF
 
 def generate_report(missing, duplicates, score):
@@ -95,9 +93,7 @@ def generate_report(missing, duplicates, score):
     pdf.cell(200, 10, txt=f"Quality Score: {score:.2f}%", ln=True)
     pdf.output("data_quality_report.pdf")
 🌐 Optional: Run Dashboard in Colab
-python
-Copy
-Edit
+
 %%writefile app.py
 import streamlit as st
 import pandas as pd
@@ -114,9 +110,6 @@ st.metric("Duplicate Records", duplicates)
 st.metric("Quality Score", f"{score:.2f}%")
 Run it:
 
-python
-Copy
-Edit
 from pyngrok import ngrok
 !streamlit run app.py &
 
@@ -125,18 +118,12 @@ url
 📊 Sample Dataset
 You can use this sales dataset:
 
-text
-Copy
-Edit
+
 https://raw.githubusercontent.com/plotly/datasets/master/superstore.csv
 ✅ Future Enhancements
 Integration with Great Expectations for advanced rules
 
 Database storage for historical quality trends
-
-Email/SMS alerts
-
-Scheduling with Apache Airflow
 
 📄 License
 This project is licensed under the MIT License.
