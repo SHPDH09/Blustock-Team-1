@@ -1,67 +1,73 @@
-🛠 Data Quality Monitoring System
-A Python-based project built in Google Colab to monitor, analyze, and report the quality of data.
-This project checks for missing values, duplicates, invalid data types, and generates a data quality score with a downloadable PDF report and optional dashboard.
+# 🛠 Data Quality Monitoring System
 
-🚀 Features
-✅ Data Ingestion – Load data from CSV or database
+A Python-based project built in **Google Colab** to monitor, analyze, and report the quality of data.  
+This project checks for missing values, duplicates, invalid data types, and generates a **data quality score** with a downloadable **PDF report** and optional **dashboard**.  
 
-✅ Quality Checks – Missing values, duplicates, outliers, and schema validation
+---
 
-✅ Data Quality Score – Auto-calculated percentage for quick insights
+## 🚀 Features
 
-✅ Reports – Export summary in PDF format
+- ✅ **Data Ingestion** – Load data from CSV or database  
+- ✅ **Quality Checks** – Missing values, duplicates, outliers, and schema validation  
+- ✅ **Data Quality Score** – Auto-calculated percentage for quick insights  
+- ✅ **Reports** – Export summary in **PDF** format  
+- ✅ **Dashboard (Optional)** – Streamlit-based UI using `pyngrok` in Colab  
+- ✅ **Email Alerts** (Optional) – Send notifications when data quality is low  
 
-✅ Dashboard (Optional) – Streamlit-based UI using pyngrok in Colab
+---
 
-✅ Email Alerts (Optional) – Send notifications when data quality is low
-
-📂 Project Structure
-bash
-Copy
-Edit
+## 📂 Project Structure
 data-quality-monitoring/
 │
-├── data/                         # CSV datasets
-│   ├── sales_data.csv
+├── data/ # CSV datasets
+│ ├── sales_data.csv
 │
 ├── notebooks/
-│   ├── data_quality_monitoring.ipynb
+│ ├── data_quality_monitoring.ipynb
 │
-├── app.py                        # Streamlit dashboard
-├── report.py                     # PDF report generator
-├── requirements.txt              # Dependencies
+├── app.py # Streamlit dashboard
+├── report.py # PDF report generator
+├── requirements.txt # Dependencies
 └── README.md
-🛠 Tech Stack
-Component	Technology
-Data Processing	Python, Pandas
-Visualization	Streamlit (via pyngrok)
-Reports	FPDF
-Storage (Optional)	MySQL / PostgreSQL
-Notebook	Google Colab
 
-📥 Installation & Setup (Google Colab)
-Open Google Colab
-
-Install dependencies:
-
-python
+yaml
 Copy
 Edit
-!pip install pandas numpy fpdf openpyxl sqlalchemy streamlit pyngrok
-Load your dataset:
 
-python
-Copy
-Edit
-import pandas as pd
+---
 
-url = "https://raw.githubusercontent.com/plotly/datasets/master/superstore.csv"
-data = pd.read_csv(url)
-data.head()
-🔍 Run Data Quality Checks
-python
-Copy
-Edit
+## 🛠 Tech Stack
+
+| Component          | Technology        |
+|--------------------|-------------------|
+| Data Processing    | Python, Pandas    |
+| Visualization      | Streamlit (via pyngrok) |
+| Reports            | FPDF              |
+| Storage (Optional) | MySQL / PostgreSQL |
+| Notebook           | Google Colab      |
+
+---
+
+## 📥 Installation & Setup (Google Colab)
+
+1. Open **Google Colab**  
+2. Install dependencies:
+    ```python
+    !pip install pandas numpy fpdf openpyxl sqlalchemy streamlit pyngrok
+    ```
+3. Load your dataset:
+    ```python
+    import pandas as pd
+
+    url = "https://raw.githubusercontent.com/plotly/datasets/master/superstore.csv"
+    data = pd.read_csv(url)
+    data.head()
+    ```
+
+---
+
+## 🔍 Run Data Quality Checks
+```python
 def check_missing_values(df):
     return df.isnull().sum()
 
